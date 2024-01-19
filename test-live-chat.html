@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding: 50px;
+        }
+
+        #greeting {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #nameInput {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #submitButton {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Greeting Page</h1>
+
+    <div id="greeting">Hello, Guest!</div>
+
+    <label for="nameInput">Enter your name:</label>
+    <input type="text" id="nameInput" placeholder="Your Name">
+
+    <button id="submitButton" onclick="updateGreeting()">Submit</button>
+
+    <script>
+        function updateGreeting() {
+            var name = document.getElementById('nameInput').value;
+            var greeting = document.getElementById('greeting');
+            
+            if (name.trim() === "") {
+                greeting.innerHTML = "Hello, Guest!";
+            } else {
+                greeting.innerHTML = "Hello, " + name + "!";
+            }
+        }
+    </script>
+
+</body>
+</html>
